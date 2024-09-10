@@ -36,7 +36,7 @@ class Thing {
         return rows;
     }
     
-    static async findByPk(pk) {   //-----> pk===id
+    static async findByPk(pk) {   //-----> pk=PRIMARY KEY==id
         const { rows } = await this.client.query(`SELECT * 
             FROM ${this.tableName}
             WHERE "id"=${pk};`);
@@ -108,4 +108,4 @@ updateByPk(pk, values): Оновлює запис за первинним клю
 Формує рядок SET, що містить атрибути та їх значення для оновлення.
 Виконує SQL-запит UPDATE для оновлення запису з умовою WHERE id = ${pk}.
 Повертає оновлені рядки.
-deleteByPk(pk): Видаляє запис з таблиці things за первинним ключем (pk). Виконує SQL-запит DELETE FROM ${this.tableName} WHERE "id" = ${pk};.
+deleteByPk(pk): Видаляє запис з таблиці things за первинним ключем (pk). Виконує SQL-запит DELETE FROM ${this.tableName} WHERE "id" = ${pk};*/
