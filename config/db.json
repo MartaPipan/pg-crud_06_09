@@ -1,16 +1,17 @@
-{"development":{
+{
+  "development":{
     "user":"postgres",
     "password":"postgres",
     "host":"localhost",
     "port":5432,
     "database":"fm_crud_pg"
-},
-"test":{
+  },
+  "test":{
     "user":"postgres",
     "password":"postgres",
     "host":"localhost",
     "port":5432,
-    "database":"fm_crud_pg"
-},
-"production":{}
+    "database":"fm_crud_pg_test"
+  },
+  "production":{}
 }
