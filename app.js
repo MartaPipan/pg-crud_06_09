@@ -1,22 +1,14 @@
 const express = require('express');
-const {
-    createThing,
-    getAllThings,
-    getThingByPK,
-    updateThingByPK,
-    deleteThingByPK
-} = require('./controllers/thing.controller');
+const router = require('./routes');
 
 const app = express();
 
 app.use(express.json());
 
-// Маршрути
-app.post('/things', createThing);
-app.get('/things', getAllThings);
-app.route('/things/:idThing')
-    .get(getThingByPK)
-    .put(updateThingByPK)
-    .delete(deleteThingByPK);
+app.use(router);
+
+app.use((err, req, res) => {
+  console.log(err);
+});
 
 module.exports = app;
