@@ -58,12 +58,12 @@ class Thing {
 
     const { rows } = await this.client.query(`
       UPDATE ${this.tableName} 
-      SET ${strSet}, "updatedAt"='${new Date().toUTCString()}' 
+      SET ${strSet}, "updatedAt"='${new Date().toISOString()}' 
       WHERE id=${pk} 
       RETURNING *;      
       `);
 
-    return rows; //array
+    return rows; //array [updatedthing] in ThingController
   }
 
   static async deleteByPk(pk) {
